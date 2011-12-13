@@ -1,0 +1,33 @@
+Name:                euler
+Version:             0.1
+Synopsis:            Project Euler solutions
+Description:         Solutions to Project Euler problems in Haskell
+Homepage:            https://github.com/mbbx6spp/euler
+License:             BSD3
+License-file:        LICENSE
+Author:              Susan Potter
+Maintainer:          me@susanpotter.net
+Copyright:           (c) 2011 Susan Potter. All rights reserved.
+Category:            Development
+Build-type:          Custom
+-- Extra-source-files:
+Cabal-version:       >=1.2
+
+Test-Suite euler-testsuite
+  Type:              exitcode-stdio-1.0
+  Main-is:           Main.hs
+  Hs-source-dirs:    src/test/haskell, src/main/haskell
+  Build-depends:     base, QuickCheck >=2.4.0.0, HUnit, test-framework,
+                     test-framework-quickcheck2, test-framework-hunit
+
+Library
+  Exposed-modules:   Euler.Problem1
+  Hs-source-dirs:    src/main/haskell
+  Build-depends:     base
+  -- Other-modules:
+  -- Build-tools:
+  Ghc-options:       -Wall
+                     -rtsopts
+                     -static
+                     -threaded
+                     -O2
